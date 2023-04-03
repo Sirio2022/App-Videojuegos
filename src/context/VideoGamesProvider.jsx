@@ -14,7 +14,7 @@ const VideoGamesProvider = ({ children }) => {
 
   useEffect(() => {
     const getVideoGames = async () => {
-      const url = `https://api.rawg.io/api/games?&page_size=40&search=genres=${genero}=platforms=${plataforma}&key=${
+      const url = `https://api.rawg.io/api/games?&page_size=40&search=genres=${genero}=platform=${plataforma}&key=${
         import.meta.env.VITE_API_KEY
       }`;
       const { data } = await axios.get(url);
