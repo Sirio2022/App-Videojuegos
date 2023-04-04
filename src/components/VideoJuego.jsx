@@ -5,6 +5,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
+import TransitionsModal  from './Modal'
 
 export default function VideoJuego({ videoGame }) {
   const { name, released, background_image, rating, platforms } = videoGame;
@@ -32,6 +33,8 @@ export default function VideoJuego({ videoGame }) {
             Plataformas:{' '}
             {platforms?.map((platform) => platform.platform.name).join(', ')}
           </Typography>
+          
+          <TransitionsModal videoGame={videoGame}/>
         </CardContent>
       </Card>
     </Grid>

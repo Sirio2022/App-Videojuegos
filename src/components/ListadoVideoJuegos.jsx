@@ -4,7 +4,7 @@ import useVideoGames from '../hooks/useVideoGames';
 
 export default function ListadoVideoJuegos() {
   const { videoGames } = useVideoGames();
-  console.log(videoGames);
+
   return (
     <>
       <Typography
