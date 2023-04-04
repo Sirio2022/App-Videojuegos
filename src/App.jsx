@@ -1,6 +1,7 @@
 import { Container, Grid, Typography } from '@mui/material';
 import Formulario from './components/Formulario';
 import FormularioPlat from './components/FormularioPlat';
+import ListadoVideoJuegos from './components/ListadoVideoJuegos';
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
           <FormularioPlat />
         </Grid>
       </Grid>
+
+      <ListadoVideoJuegos />
     </Container>
   );
 }

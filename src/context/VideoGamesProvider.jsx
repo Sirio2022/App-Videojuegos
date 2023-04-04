@@ -17,8 +17,34 @@ const VideoGamesProvider = ({ children }) => {
       const url = `https://api.rawg.io/api/games?&page_size=40&search=genres=${genero}=platform=${plataforma}&key=${
         import.meta.env.VITE_API_KEY
       }`;
-      const { data } = await axios.get(url);
-      setVideoGames(data.results);
+      const url2 = `https://api.rawg.io/api/games?&page_size=40&search=genres=${genero}=platform=${plataforma}&key=${
+        import.meta.env.VITE_API_KEY
+      }&page=2`;
+      const url3 = `https://api.rawg.io/api/games?&page_size=40&search=genres=${genero}=platform=${plataforma}&key=${
+        import.meta.env.VITE_API_KEY
+      }&page=3`;
+      const url4 = `https://api.rawg.io/api/games?&page_size=40&search=genres=${genero}=platform=${plataforma}&key=${
+        import.meta.env.VITE_API_KEY
+      }&page=4`;
+      const url5 = `https://api.rawg.io/api/games?&page_size=40&search=genres=${genero}=platform=${plataforma}&key=${
+        import.meta.env.VITE_API_KEY
+      }&page=5`;
+
+      const [data, data2, data3, data4, data5] = await Promise.all([
+        axios.get(url),
+        axios.get(url2),
+        axios.get(url3),
+        axios.get(url4),
+        axios.get(url5),
+      ]);
+
+      setVideoGames([
+        ...data.data.results,
+        ...data2.data.results,
+        ...data3.data.results,
+        ...data4.data.results,
+        ...data5.data.results,
+      ]);
     };
 
     getVideoGames();
@@ -65,6 +91,7 @@ const VideoGamesProvider = ({ children }) => {
         handleChangeGenero,
         plataforma,
         handleChangePlataforma,
+        videoGames,
       }}
     >
       {children}
