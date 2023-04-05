@@ -22,7 +22,7 @@ const style = {
 };
 
 export default function TransitionsModal({ videoGame }) {
-  const { name, released, background_image, rating, platforms } = videoGame;
+  const { name, released, background_image, rating, platforms } = videoGame; //Aca no habra el Id? porque no se esta pasando como parametro, y no se esta trayendo en el componente, y se esta usando en el useEffect.
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);

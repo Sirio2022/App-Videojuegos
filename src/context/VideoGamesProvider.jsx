@@ -76,7 +76,7 @@ const VideoGamesProvider = ({ children }) => {
 
   function handleChangeGenero(e) {
     setGenero(e.target.value);
-  }
+  }//Aca se cambia el genero, intenta hacerlo con una una funcion que filtre, solo el genro que se selecciono. Ojo, se esta trayendo todo el array de generos, y se esta filtrando en el componente, pero se puede hacer en el provider, y asi no se trae todo el array de generos, sino solo el que se selecciono.
 
   const handleChangePlataforma = (e) => {
     setPlataforma(e.target.value);
